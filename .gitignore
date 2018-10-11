@@ -7,3 +7,4 @@ venv
 storage/
 test.py
 *.mp3
+image.jpg

@@ -7,3 +7,8 @@ class Db:
 
     def hset(self, id, key, value):
         return self.db.hset(id, key, value)
+
+    def save_image(self, id, key, filename):
+        img = open(filename, "rb")
+        self.db.hset(id, key, img.read())
+        img.close()

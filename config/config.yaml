@@ -1,5 +1,6 @@
 token: a886a957e3d7c3cd7c0dda82fbc1653fa300cc01d32aab8c90ad41b4db8268337f2262ef6d7655917fba3
 backend: backend.vk.backend
+filename: image.jpg
 
 db:
   path: db.redis.db

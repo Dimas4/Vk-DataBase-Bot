@@ -6,9 +6,9 @@ from parse_config.parse_config import parse
 
 if __name__ == "__main__":
     try:
-        token, backend, db, dialog = parse("config", "config.yaml")
+        token, backend, db, dialog, filename = parse("config", "config.yaml")
     except ConfigDoesNotExist as e:
         print(repr(e))
         exit()
 
-    start(token, backend, db, dialog)
+    start(token, backend, db, dialog, filename)

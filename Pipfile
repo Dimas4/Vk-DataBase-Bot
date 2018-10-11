@@ -9,6 +9,7 @@ gtts = "*"
 vk-api = "*"
 pyyaml = "*"
 redis = "*"
+image = "*"
 
 [dev-packages]
 

@@ -13,4 +13,3 @@ class Db:
 
     def hset(self, id, key, value):
         return self.db.hset(id, key, value)
-
