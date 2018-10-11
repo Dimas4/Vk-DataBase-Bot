@@ -17,12 +17,6 @@ class VkBot:
         data = {"peer_id": id, "message": message, 'attachment': attach}
         self.vk.method("messages.send", data)
 
-    @staticmethod
-    def get_message_and_ids(messages):
-        return messages["items"][0]["last_message"]["from_id"], \
-               messages["items"][0]["last_message"]["id"], \
-               messages["items"][0]["last_message"]["text"]
-
     def upload_file(self, path, id):
         audio = {'file': (path, open(path, 'rb'))}
         upload_url = self.vk.method('docs.getMessagesUploadServer',
@@ -32,5 +26,8 @@ class VkBot:
         saved = self.vk.method('docs.save', {'file': result, 'title': 'ssasad.ogg'})[0]
         return saved
 
-    def mark_as_read(self, id):
-        self.vk.method("messages.markAsRead", {"message_ids": id})
+    @staticmethod
+    def get_message_and_ids(messages):
+        return messages["items"][0]["last_message"]["from_id"], \
+               messages["items"][0]["last_message"]["id"], \
+               messages["items"][0]["last_message"]["text"]

@@ -10,4 +10,4 @@ def parse(dir, name):
     with manager(path, 'r', ConfigDoesNotExist(path)) as stream:
         config = yaml.load(stream)
 
-    return config['token'], config['backend'], config['db']
+    return config['token'], config['backend'], config['db'], config['dialog']

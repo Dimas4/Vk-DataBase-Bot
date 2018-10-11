@@ -6,18 +6,13 @@ from dialog.dialog import Dialog
 from db.db import Db
 
 
-def get_or_set(text):
-    return [text.split(':')[1]] if '&' not in text else [text.split(':')[1].split('&')[0],
-                                                         text.split(':')[1].split('&')[1]]
-
-
-def start(token, backend, db):
+def start(token, backend, db, dialog):
     bot = init_backend(token, backend)
     path = db['path']
     del db['path']
     db_path = init_db(path, **db)
     db = Db(db_path)
-    dialog = Dialog(db)
+    dialog = Dialog(db, dialog)
 
     print('Start')
     
@@ -28,8 +23,8 @@ def start(token, backend, db):
             id, message_id, body = bot.get_message_and_ids(messages)
             print('Запрос:', id, body)
 
-            if body.lower() in dialog.text:
-                bot.send_message(id, dialog.text[body.lower()])
+            if body.lower() in dialog.common_answer:
+                bot.send_message(id, dialog.common_answer[body.lower()])
                 continue
 
             for key in dialog.action:
