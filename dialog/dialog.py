@@ -6,3 +6,4 @@ class Dialog:
         self.action = dialog['action']
         self.ok = dialog['ok']
         self.text_does_not_exist = dialog['text_does_not_exist']
+        self.error = dialog['error']
