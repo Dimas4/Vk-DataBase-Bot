@@ -25,12 +25,12 @@ class VkBot:
             "peer_id": id,
             "attachment": f"photo{owner_id}_{photo_id}"
         })
-    
+
     @staticmethod
     def get_message_ids_image(messages):
         file = messages["items"][0]["last_message"]['attachments']
         url = None
-        if file:
+        if file and file[0].get('photo'):
             url = file[0]['photo']['sizes'][2]['url']
         return messages["items"][0]["last_message"]["from_id"], \
                messages["items"][0]["last_message"]["id"], \
