@@ -1,6 +1,3 @@
-import json
-import requests
-
 from backend.generate_vk_instance.generate_instance import generate_instance
 
 
@@ -35,4 +32,3 @@ class VkBot:
         return messages["items"][0]["last_message"]["from_id"], \
                messages["items"][0]["last_message"]["id"], \
                messages["items"][0]["last_message"]["text"], url
-
