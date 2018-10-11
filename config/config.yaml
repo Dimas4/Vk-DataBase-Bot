@@ -1,0 +1,7 @@
+token: a886a957e3d7c3cd7c0dda82fbc1653fa300cc01d32aab8c90ad41b4db8268337f2262ef6d7655917fba3
+backend: backend.vk.backend
+db:
+  path: db.redis.db
+  host: localhost
+  port: 6379
+  db_c: 0

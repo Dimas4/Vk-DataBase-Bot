@@ -1,0 +1,9 @@
+app.py___jb_tmp___
+.idea/
+venv
+*.pyc 
+*__pycache__/*
+*__pycache__*
+storage/
+test.py
+*.mp3
