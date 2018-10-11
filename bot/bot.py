@@ -62,5 +62,5 @@ def start(token, backend, db, dialog, filename):
             except Exception as e:
                 print(str(e))
                 bot.send_message(id, dialog.error)
-            
+
         time.sleep(1)
